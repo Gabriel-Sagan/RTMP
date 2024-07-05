@@ -1,4 +1,4 @@
-RTMP or Real Time Midi Program is designed to accompany free form musical performance outputting MIDI based on input from the user (as of 0.4).
+RTMP or Real Time Midi Program is designed to accompany free form musical performance outputting MIDI based on user input (as of 0.4).
 
 ## Installation and Setup:
 
