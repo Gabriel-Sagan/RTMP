@@ -1,8 +1,8 @@
-RTMP or Real Time Midi Program is designed to accompany free form musical performance based on input from the user (as of 0.4) outputting MIDI.
+RTMP or Real Time Midi Program is designed to accompany free form musical performance outputting MIDI based on input from the user (as of 0.4).
 
 ## Installation and Setup:
 
-RTMP uses the Python Library SCAMP. Type the following command in the command prompt:
+RTMP uses the Python library SCAMP to generate real time musical output. Type the following command in the command prompt:
 
 pip install scamp
 
