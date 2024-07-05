@@ -16,4 +16,4 @@ Configure instrument sound, run rtmp0.4.py, and input requested information.
 
 When prompted to input trichord Forte numbers, refer to: https://en.wikipedia.org/wiki/List_of_set_classes
 
-Use i for inversions instead of A and B. (e.g. 3-2A and 3-2B become 3-2 and 3-2i)
+Use i for inversions instead of B (e.g. 3-2A and 3-2B become 3-2 and 3-2i).
