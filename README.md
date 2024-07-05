@@ -6,6 +6,6 @@ RTMP uses the Python Library SCAMP. Type the following command in the command pr
 
 pip install scamp
 
-RTMP also utilizes external instrumental plugins using LoopMIDI (Windows)
+0.4 utilizes external instrumental plugins using LoopMIDI (Windows)
 
-The user can configure the code by utilizing the comments in rtmp0.4.py to use the included default midi sounds.
+The user can configure the code by utilizing the comments in rtmp0.4.py to use the included default midi sounds if not using LoopMIDI and external plugins.
