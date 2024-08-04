@@ -23,6 +23,7 @@ forte_numbers = {
 }
 
 note_values = {
+    
     '16th notes': .25,
     '8th notes': .5,
     'quarter notes': 1,
@@ -37,9 +38,14 @@ def trichord_input():
     
     global trichords
     
-    
     while True: 
-        selected_chords_str = input("Enter trichord set classes separated by comma. Use i for inverted trichords. (e.g. 3-9, 3-5i, 3-8): ")
+        selected_chords_str = input("Enter trichord set classes separated by comma. Use i for inverted trichords. (e.g. 3-9, 3-5i, 3-8) or type 'All' for all chords: ")
+        
+        if selected_chords_str.strip().lower() == 'all':
+            trichords = list(forte_numbers.values())
+            print(f"Selected All Chords")
+            return trichords
+        
         selected_chords_list = selected_chords_str.split(',')
         selected_chords_list = [chord.strip() for chord in selected_chords_list]
         
@@ -56,10 +62,17 @@ def trichord_input():
             print(f"{e}, please try again.")
 
 def duration_input():
+    
     global durations
     
     while True:
-        selected_duration_str = input("Enter note values separated by comma. (e.g. 16th notes, 8th notes, quarter notes, half notes, whole notes): ")
+        selected_duration_str = input("Enter note values separated by comma. (e.g. 16th notes, 8th notes, quarter notes, half notes, whole notes) or type 'All' for all note values: ")
+        
+        if selected_duration_str.strip().lower() == 'all':
+            durations = list(note_values.values())
+            print(f"Selected All Note Values")
+            return durations
+        
         selected_duration_list = selected_duration_str.split(',')
         selected_duration_list = [num.strip() for num in selected_duration_list]
         
@@ -173,10 +186,6 @@ def three():
                 
     else:
         return int(notes)
-    
-    
-#             if sing_note % 3 == 0:
-#                 return sing_note
             
 
 def make_melody():
@@ -207,3 +216,4 @@ def make_melody():
         
     return melody
     
+
