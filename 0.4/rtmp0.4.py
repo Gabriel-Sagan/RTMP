@@ -36,6 +36,8 @@ while True:
     
 #     performance = s.stop_transcribing()
 #     performance.to_score(title="RTMP 0.4", composer = "Generated with Real Time Midi Program 0.4 written by Gabriel Sagan").show_xml()
+
+wait(random.randint(2, 7))
         
     
 
