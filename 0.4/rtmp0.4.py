@@ -19,7 +19,7 @@ while True:
         s = Session(tempo = int(temp))
     
     #Use instead if not utilizing external plugin
-    #s.new_part("piano")
+    #p = s.new_part("piano")
     p = s.new_midi_part("piano", midi_output_device="loopMIDI Port")
     
     
