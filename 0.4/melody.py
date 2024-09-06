@@ -93,7 +93,7 @@ def tempo_input():
     while True:
         
         choice = input("Should there be a random tempo selected? (Y/N): ").lower()
-        if choice == 'y':
+        if choice == 'y' or choice == 'yes':
             while True:
                 try:
                     tempo_range = input("What should the tempo range be? Please separate by comma (e.g. 60, 75): ")
@@ -112,7 +112,7 @@ def tempo_input():
                 except ValueError as e:
                     print(f"{e} Please try again.")
         
-        elif choice == 'n':
+        elif choice == 'n' or choice == 'no':
             
             while True:  
                 tempo = input("Enter the tempo to be used: ")
@@ -136,7 +136,7 @@ def note_input():
     while True:
         
         choice = input("Should there be random number of notes selected? (Y/N): ").lower()
-        if choice == 'y':
+        if choice == 'y' or choice == 'yes':
             while True:
                 try:
                     note_range = input("What should the note number range be? Please separate by comma (e.g. 6, 36): ")
@@ -155,7 +155,7 @@ def note_input():
                 except ValueError as e:
                     print(f"{e} Please try again.")
         
-        elif choice == 'n':
+        elif choice == 'n' or choice == 'no':
             
             while True:  
                 note = input("Enter the number of notes: ")
