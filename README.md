@@ -1,4 +1,4 @@
-RTMP or Real Time Midi Program is designed to accompany free form musical performance outputting MIDI based on user input (as of 0.4).
+RTMP or Real Time Midi Program is designed to accompany free form musical performance outputting MIDI based on user input.
 
 ## Installation and Setup:
 
@@ -6,16 +6,14 @@ RTMP uses the Python library SCAMP and others to generate real time musical outp
 
 `pip install scamp pynput python-rtmidi`
 
-RTMP utilizes external instrumental plugins using LoopMIDI (Windows)
-
-The user can configure the code by utilizing the comments in rtmp0.4.py to use the included default midi sounds if not using LoopMIDI and external plugins.
+RTMP can utilize external instrumental plugins using LoopMIDI (Windows) or IAC Driver (Mac). Use the provided comments in `generator.py` replacing the `p` variable.
 
 ## Run the app:
 
-Configure instrument sound, run `rtmp0.4.py`, and input requested information.
+Configure instrument sound, run `generator.py`, and input desired information.
 
 When prompted to input trichord Forte numbers, refer to: https://en.wikipedia.org/wiki/List_of_set_classes
 
 Use i for inversions instead of B (e.g. 3-2A and 3-2B become 3-2 and 3-2i).
 
-YouTube demonstration: https://youtu.be/bExJxpnGC-s
+YouTube demonstration after setup: https://youtu.be/bExJxpnGC-s
