@@ -18,8 +18,11 @@ while True:
     else:
         s = Session(tempo = int(temp))
     
-    #Use instead if wanting to use own plugin
-    #p = s.new_midi_part("piano", midi_output_device="loopMIDI Port")
+    #Use instead if wanting to external plugin
+    #Windows: p = s.new_midi_part("piano", midi_output_device="loopMIDI Port")
+    #Mac: p = s.new_midi_part("IAC")
+    #Linux: p = s.new_midi_part("piano", midi_output_device="Midi Through Port 0")
+    
     p = s.new_part("piano")
     
     #s.start_transcribing()
@@ -34,7 +37,7 @@ while True:
             p.play_note(note, 0.7, duration)
     
     #performance = s.stop_transcribing()
-    #performance.to_score(title="RTMP 0.4", composer = "Generated with Real Time Midi Program 0.4 written by Gabriel Sagan").show_xml()
+    #performance.to_score(title="RTMP", composer = "Generated with Real Time Midi Program written by Gabriel Sagan").show_xml()
 
 
     wait(random.randint(2, 7))
