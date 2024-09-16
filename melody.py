@@ -24,11 +24,11 @@ forte_numbers = {
 
 note_values = {
     
-    '16th notes': .25,
-    '8th notes': .5,
-    'quarter notes': 1,
-    'half notes': 2,
-    'whole notes': 4
+    '16ths': .25,
+    '8ths': .5,
+    'quarters': 1,
+    'halfs': 2,
+    'wholes': 4
 }
 
 trichords = []
@@ -66,7 +66,7 @@ def duration_input():
     global durations
     
     while True:
-        selected_duration_str = input("Enter note values separated by comma. (e.g. 16th notes, 8th notes, quarter notes, half notes, whole notes) or type 'All' for all note values: ")
+        selected_duration_str = input("Enter note values separated by comma. (e.g. 16ths, 8ths, quarters, halfs, wholes) or type 'All' for all note values: ")
         
         if selected_duration_str.strip().lower() == 'all':
             durations = list(note_values.values())
