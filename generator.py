@@ -18,7 +18,7 @@ while True:
     else:
         s = Session(tempo = int(temp))
     
-    #Use instead if wanting to external plugin
+    #Use instead if wanting to use external plugin
     #Windows: p = s.new_midi_part("piano", midi_output_device="loopMIDI Port")
     #Mac: p = s.new_midi_part("piano", "IAC")
     #Linux: p = s.new_midi_part("piano", midi_output_device="Midi Through Port 0")
