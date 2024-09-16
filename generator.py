@@ -27,7 +27,8 @@ while True:
     
     #s.start_transcribing()
 
-    melody = make_melody()
+    pitch_classes = [(note % 12, duration) for note, duration in melody]   
+    print(pitch_classes)
     
     print(s)
     print(melody)
