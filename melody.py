@@ -24,11 +24,13 @@ forte_numbers = {
 
 note_values = {
     
-    '16ths': .25,
-    '8ths': .5,
-    'quarters': 1,
-    'halfs': 2,
-    'wholes': 4
+    '16th': .25,
+    '8th': .5,
+    'quarter': 1,
+    'half': 2,
+    'whole': 4,
+    '8th triplet': 0.33,
+    'quarter triplet': 0.66666666667
 }
 
 trichords = []
@@ -66,7 +68,7 @@ def duration_input():
     global durations
     
     while True:
-        selected_duration_str = input("Enter note values separated by comma. (e.g. 16ths, 8ths, quarters, halfs, wholes) or type 'All' for all note values: ")
+        selected_duration_str = input("Enter note values separated by comma. (e.g. 16th, 8th, quarter, half, whole, 8th triplet, quarter triplet) or type 'All' for all note values: ")
         
         if selected_duration_str.strip().lower() == 'all':
             durations = list(note_values.values())
@@ -130,7 +132,6 @@ def tempo_input():
         else:
             print('Please input Y/N')
     
-
 def note_input():
     
     while True:
@@ -173,10 +174,9 @@ def note_input():
         else:
             print('Please input Y/N')
             
-
 notes = note_input()
 
-def three():
+def note_num_check():
     
     if isinstance(notes, list):
         if len(notes) == 2:
@@ -187,12 +187,11 @@ def three():
     else:
         return int(notes)
             
-
 def make_melody():
     
     melody = []
      
-    num_notes = three()
+    num_notes = note_num_check()
             
     trichord_seq = random.choices(trichords, k=num_notes)
     
