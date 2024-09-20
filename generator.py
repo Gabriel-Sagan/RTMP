@@ -14,7 +14,7 @@ while True:
     if isinstance(temp, list):
         if len(temp) == 2: 
             temp_int = [int(num) for num in temp]
-            s = Session (tempo = random.randint(min(temp_int), max(temp_int)))
+            s = Session(tempo = random.randint(min(temp_int), max(temp_int)))
     else:
         s = Session(tempo = int(temp))
     
@@ -28,6 +28,15 @@ while True:
     melody = make_melody()
     
     #s.start_transcribing()
+    durations = [duration for note, duration in melody]
+    notes = [note for note, duration in melody]
+    
+    sel_rand_dur = random.choice(durations)
+    repl_rand_dur = random.choice(durations)
+    if random.random() < 0.6:
+        durations = [repl_rand_dur if x == sel_rand_dur else x for x in durations]
+    
+    melody = list(zip(notes, durations))
 
     pitch_classes = [(note % 12, duration) for note, duration in melody]   
     
@@ -40,6 +49,5 @@ while True:
     
     #performance = s.stop_transcribing()
     #performance.to_score(title="RTMP", composer = "Generated with Real Time Midi Program written by Gabriel Sagan").show_xml()
-
 
     wait(random.randint(2, 7))
