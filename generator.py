@@ -5,6 +5,7 @@ import random
 
 trichord_input()
 duration_input()
+octave_input()
 temp = tempo_input()
 
 while True:
@@ -19,11 +20,11 @@ while True:
         s = Session(tempo = int(temp))
     
     #Use instead if wanting to use external plugin
-    #Windows: p = s.new_midi_part("piano", midi_output_device="loopMIDI Port")
+    #Windows: p = s.new_part("piano")
     #Mac: p = s.new_midi_part("piano", midi_output_device="IAC")
     #Linux: p = s.new_midi_part("piano", midi_output_device="Midi Through Port 0")
     
-    p = s.new_part("piano")
+    p = s.new_midi_part("piano", midi_output_device="loopMIDI Port")
     
     melody = make_melody()
     
@@ -51,3 +52,4 @@ while True:
     #performance.to_score(title="RTMP", composer = "Generated with Real Time Midi Program written by Gabriel Sagan").show_xml()
 
     wait(random.randint(2, 7))
+
