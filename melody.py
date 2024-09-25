@@ -1,6 +1,7 @@
 import random
 
 forte_numbers = {
+    
     '3-1': [36, 37, 38],
     '3-2': [36, 37, 39],
     '3-2i': [36, 38, 39],
@@ -33,8 +34,19 @@ note_values = {
     'quarter triplet': 0.66666666667
 }
 
+octave_values = {
+    
+    'C2': 0,
+    'C3': 12,
+    'C4': 24,
+    'C5': 36,
+    'C6': 48,
+    'C7': 60
+}
+
 trichords = []
 durations = []
+octaves = []
 
 def trichord_input():
     
@@ -51,7 +63,7 @@ def trichord_input():
         selected_chords_list = selected_chords_str.split(',')
         selected_chords_list = [chord.strip() for chord in selected_chords_list]
         
-        trichords = list(forte_numbers[numbers] for numbers in selected_chords_list if numbers in forte_numbers)
+        trichords = list(forte_numbers[num] for num in selected_chords_list if num in forte_numbers)
         
         try:
             if all(chord in forte_numbers for chord in selected_chords_list):
@@ -89,6 +101,30 @@ def duration_input():
             
         except ValueError as e:
             print(f"{e}, please try again.")
+             
+def octave_input():
+    
+    global octaves
+    
+    while True:
+        try:
+            octave_range = input("What should the octave range be between C2 and C7? Please separate by comma (e.g. C2, C4): ").upper()
+            octave_range = octave_range.split(',')
+            octave_range = [num.strip() for num in octave_range]
+            
+            octaves = list(octave_values[num] for num in octave_range if num in octave_values)
+            
+            if len(octaves) == 2:
+                if octaves[0] < octaves[1]:                          
+                    print(f"Selected octave range: {octave_range}")
+                    return octaves
+                else:
+                    raise ValueError("The first octave must be less than the second octave.")
+            else:
+                raise ValueError("Please enter exactly two octaves starting on C separated by a comma.")
+                
+        except ValueError as e:
+            print(f"{e} Please try again.")
             
 def tempo_input():
 
@@ -132,6 +168,7 @@ def tempo_input():
         else:
             print('Please input Y/N')
     
+
 def note_input():
     
     while True:
@@ -174,6 +211,7 @@ def note_input():
         else:
             print('Please input Y/N')
             
+
 notes = note_input()
 
 def note_num_check():
@@ -187,6 +225,7 @@ def note_num_check():
     else:
         return int(notes)
             
+
 def make_melody():
     
     melody = []
@@ -197,7 +236,7 @@ def make_melody():
     
     for count in range(len(trichord_seq)):
         random_trichord = trichord_seq[count]
-        random_transposition = random.randint(0, 36)
+        random_transposition = random.randint(*octaves)
         transposed_trichords = [num + random_transposition for num in random_trichord]
         trichord_seq[count] = transposed_trichords
     
