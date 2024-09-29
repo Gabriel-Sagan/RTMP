@@ -10,7 +10,7 @@ RTMP can utilize external instrumental plugins using LoopMIDI (Windows) or IAC D
 
 ## Run the app:
 
-Configure instrument sound, run `generator.py`, and input desired information.
+Configure instrument sound, run `generator.py`, and input desired information including number of notes, trichord classification, duration, octave range, and tempo.
 
 When prompted to input trichord Forte numbers, refer to: https://en.wikipedia.org/wiki/List_of_set_classes
 
