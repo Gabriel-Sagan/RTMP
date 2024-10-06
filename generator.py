@@ -21,7 +21,7 @@ while True:
     
     #Use instead if wanting to use external plugin
     #Windows: p = s.new_part("piano")
-    #Mac: p = s.new_midi_part("piano", midi_output_device="IAC")
+    #Mac: p = s.new_midi_part("piano", midi_output_device="IAC Bus 1")
     #Linux: p = s.new_midi_part("piano", midi_output_device="Midi Through Port 0")
     
     p = s.new_midi_part("piano", midi_output_device="loopMIDI Port")
