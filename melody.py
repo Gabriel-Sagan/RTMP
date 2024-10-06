@@ -30,8 +30,8 @@ note_values = {
     'quarter': 1,
     'half': 2,
     'whole': 4,
-    '8th triplet': 0.33,
-    'quarter triplet': 0.66666666667
+    '8th triplet': 0.3333333333333333,
+    'quarter triplet': 0.6666666666666666
 }
 
 octave_values = {
@@ -48,9 +48,15 @@ trichords = []
 durations = []
 octaves = []
 
+all_trichord = False
+all_duration = False
+
 def trichord_input():
     
     global trichords
+    global all_trichord
+    
+    all_trichord = False
     
     while True: 
         selected_chords_str = input("Enter trichord set classes separated by comma. Use i for inverted trichords. (e.g. 3-9, 3-5i, 3-8) or type 'All' for all chords: ")
@@ -58,6 +64,7 @@ def trichord_input():
         if selected_chords_str.strip().lower() == 'all':
             trichords = list(forte_numbers.values())
             print(f"Selected All Chords")
+            all_trichord = True
             return trichords
         
         selected_chords_list = selected_chords_str.split(',')
@@ -74,10 +81,17 @@ def trichord_input():
 
         except ValueError as e:
             print(f"{e}, please try again.")
+            
+def all_trichord():
+    global all_trichord
+    return all_trichord
 
 def duration_input():
     
     global durations
+    global all_duration
+    
+    all_duration = False
     
     while True:
         selected_duration_str = input("Enter note values separated by comma. (e.g. 16th, 8th, quarter, half, whole, 8th triplet, quarter triplet) or type 'All' for all note values: ")
@@ -85,6 +99,7 @@ def duration_input():
         if selected_duration_str.strip().lower() == 'all':
             durations = list(note_values.values())
             print(f"Selected All Note Values")
+            all_duration = True
             return durations
         
         selected_duration_list = selected_duration_str.split(',')
@@ -101,6 +116,10 @@ def duration_input():
             
         except ValueError as e:
             print(f"{e}, please try again.")
+            
+def all_duration():
+    global all_duration
+    return all_duration
              
 def octave_input():
     
