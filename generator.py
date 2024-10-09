@@ -19,16 +19,17 @@ while True:
     else:
         s = Session(tempo = int(temp))
     
-    #Use instead if wanting to use external plugin
-    #Windows: p = s.new_part("piano")
-    #Mac: p = s.new_midi_part("piano", midi_output_device="IAC Bus 1")
-    #Linux: p = s.new_midi_part("piano", midi_output_device="Midi Through Port 0")
+    # Use instead if wanting to use external plugin
+    # Windows: p = s.new_midi_part("piano", midi_output_device="loopMIDI Port")
+    # Mac: p = s.new_midi_part("piano", midi_output_device="IAC Bus 1")
+    # Linux: p = s.new_midi_part("piano", midi_output_device="Midi Through Port 0")
     
-    p = s.new_midi_part("piano", midi_output_device="loopMIDI Port")
+    p = s.new_part("piano")
     
     melody = make_melody()
     
     #s.start_transcribing()
+    
     durations = [duration for note, duration in melody]
     notes = [note for note, duration in melody]
     
