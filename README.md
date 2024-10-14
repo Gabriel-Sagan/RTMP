@@ -16,4 +16,5 @@ When prompted to input trichord Forte numbers, refer to: https://en.wikipedia.or
 
 Use i for inversions instead of B (e.g. 3-2A and 3-2B become 3-2 and 3-2i).
 
+Used in live performance: https://www.youtube.com/watch?v=6Nc0uJ4Kql4
 YouTube demonstration after setup: https://youtu.be/bExJxpnGC-s
