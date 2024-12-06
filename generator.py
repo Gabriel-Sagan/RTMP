@@ -38,7 +38,7 @@ while True:
     if random.random() < 0.6:
         durations = [repl_rand_dur if x == sel_rand_dur else x for x in durations]
         
-    compound = [0.3333333333333333, 0.6666666666666666, 2]
+    compound = [0.3333333333333333, 0.6666666666666666, 1, 2]
     simple = [0.25, 0.5, 1, 2]
     
     if all_duration():
